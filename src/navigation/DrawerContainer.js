@@ -2,6 +2,8 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
 import MenuButton from '../components/MenuButton';
+import {useNavigation} from '@react-navigation/native';
+import Route from '../routes/route';
 
 const styles = StyleSheet.create({
   content: {
@@ -18,32 +20,30 @@ const styles = StyleSheet.create({
 });
 
 export default function DrawerContainer(props) {
-  const {navigation} = props;
+  const navigation = useNavigation();
+
   return (
     <View style={styles.content}>
       <View style={styles.container}>
         <MenuButton
-          title="HOME"
+          title={Route.HOME}
           source={require('../assets/icons/home.png')}
           onPress={() => {
-            navigation.navigate('HomeScreen');
-            navigation.closeDrawer();
+            navigation.navigate('home_screen');
           }}
         />
         <MenuButton
-          title="CATEGORIES"
+          title={Route.CATEGORIES}
           source={require('../assets/icons/category.png')}
           onPress={() => {
             navigation.navigate('categories');
-            navigation.closeDrawer();
           }}
         />
         <MenuButton
-          title="SEARCH"
+          title={Route.SEARCH}
           source={require('../assets/icons/search.png')}
           onPress={() => {
-            navigation.navigate('Search');
-            navigation.closeDrawer();
+            navigation.navigate('search_screen');
           }}
         />
       </View>

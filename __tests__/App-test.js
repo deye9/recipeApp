@@ -11,7 +11,7 @@ import App from '../src/App';
 import renderer from 'react-test-renderer';
 
 import {NavigationContainer} from '@react-navigation/native';
-import DrawerContainer from '../src/screens/DrawerContainer';
+import DrawerContainer from '../src/navigation/DrawerContainer';
 import {render, screen, fireEvent} from '@testing-library/react-native';
 
 it('renders correctly', () => {
